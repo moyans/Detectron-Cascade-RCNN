@@ -45,3 +45,25 @@ def get_coco_dataset():
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
+
+def get_surveyPOSM_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '17778', '17779', '17780'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
+def get_idtSKU_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '3477'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
+
+def test():
+    print(get_surveyPOSM_dataset())
+
+# test()
