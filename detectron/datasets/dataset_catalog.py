@@ -1,3 +1,4 @@
+# coding: utf-8
 # Copyright (c) 2017-present, Facebook, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -201,7 +202,23 @@ _DATASETS = {
             _DATA_DIR + '/VOC2012/annotations/voc_2012_val.json',
         _DEVKIT_DIR:
             _DATA_DIR + '/VOC2012/VOCdevkit2012'
+    },
+    #  add data
+    'coco_2019_HeapSeg0911Data' : {
+        #  20190911_堆头分割
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_HeapSeg0911Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_HeapSeg0911Data2019.json'
+    },
+    'coco_2019_HeapSeg0911CheckData' : {
+        #  20190911_堆头分割
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_HeapSeg0911Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_HeapSeg0911CheckData2019.json'
     }
+
 }
 
 
