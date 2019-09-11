@@ -32,3 +32,4 @@ detectron/utils/cython_*.c
 
 ONLINE_MODELS/*
 pertrain_model/*
+OUTPUT_DIR/*

@@ -217,7 +217,25 @@ _DATASETS = {
             _DATA_DIR + '/coco/coco_HeapSeg0911Data2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_HeapSeg0911CheckData2019.json'
+    },
+
+    'coco_2019_SKU110kData' : {
+        #  SKU110k trainset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SKU110kData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SKU110kData2019.json'
+    },
+    'coco_2019_SKU110kCheckData' : {
+        #  SKU110k testset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SKU110kData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SKU110kCheckData2019.json'
     }
+
+
+
 
 }
 
