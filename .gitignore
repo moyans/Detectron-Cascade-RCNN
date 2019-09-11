@@ -16,6 +16,13 @@ build/
 *.swo
 *.swp
 
+# data
+*.xml
+*.jpg
+*.JPEG
+*.JPG
+*.png
+
 # Dataset symlinks
 detectron/datasets/data/*
 !detectron/datasets/data/README.md

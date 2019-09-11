@@ -10,12 +10,12 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
-            // // det2xml
-            // "args": [
-            //     "--m", "ONLINE_MODELS/surveyPOSMDet_faster_rcnn_R50_FPN_2x_190827/model_final.pkl",
-            //     "--c", "ONLINE_MODELS/surveyPOSMDet_faster_rcnn_R50_FPN_2x_190827/surveyPOSMDet_faster_rcnn_R50_FPN_2x_190827.yaml",
-            //     "--t", "no_use/"
-            // ]
+            // det2xml
+            "args": [
+                "--m", "ONLINE_MODELS/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424/model_final.pkl",
+                "--c", "ONLINE_MODELS/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424.yaml",
+                "--t", "JPEGImages/"
+            ]
         }
     ]
 }
