@@ -232,8 +232,15 @@ _DATASETS = {
             _DATA_DIR + '/coco/coco_SKU110kData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_SKU110kCheckData2019.json'
-    }
+    },
 
+    'coco_2019_BagP1Data' : {
+        #  bag data part1 trainset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_BagP1Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_BagP1Data2019.json'
+    },
 
 
 
