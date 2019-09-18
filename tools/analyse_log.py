@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -14,7 +15,8 @@ if __name__ == '__main__':
     all_time = []
     all_lr = []
 
-    log_file = '/data/code/sunchao/Detectron-Cascade-RCNN/OUTPUT_DIR/heapSeg/heapSeg_e2e_faster_rcnn_X-101-64x4d-FPN_2x_190911/train.log'
+    log_file = '/data/code/sunchao/Detectron-Cascade-RCNN/OUTPUT_DIR/bag/bag_e2e_faster_rcnn_R-50-FPN_2x_190917/train.log'
+    rootDir = os.path.dirname(log_file)
 
     with open(log_file) as f:
         for line in f:
@@ -83,5 +85,5 @@ if __name__ == '__main__':
     ax1.set_ylabel('loss and accuracy')
     ax2.set_ylabel('learning rate')
 
-    plt.savefig(log_name + '.png')
+    plt.savefig(os.path.join(rootDir, log_name + '.png'))
     plt.show()

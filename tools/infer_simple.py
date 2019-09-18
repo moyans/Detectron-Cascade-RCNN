@@ -169,3 +169,13 @@ if __name__ == '__main__':
     setup_logging(__name__)
     args = parse_args()
     main(args)
+
+
+'''
+python tools/infer_simple.py 
+--cfg OUTPUT_DIR/bag/bag_e2e_faster_rcnn_R-50-FPN_2x_190917/bag_e2e_faster_rcnn_R-50-FPN_2x_190917.yaml 
+--wts OUTPUT_DIR/bag/bag_e2e_faster_rcnn_R-50-FPN_2x_190917/model_final.pkl 
+--output-dir /data/Data/LV_BAG/JDBB_190916/JDBB_190916_part2/vis/ 
+--image-ext jpg 
+/data/Data/LV_BAG/JDBB_190916/JDBB_190916_part2/JPEGImages/
+'''
