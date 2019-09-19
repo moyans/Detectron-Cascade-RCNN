@@ -256,6 +256,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_SkuDetData2019.json'
     },
+    'coco_2019_SkuDetTrainSetData' : {
+        #  general sku train data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SkuDetTrainSetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SkuDetTrainSetData2019.json'
+    },
 
 
 
