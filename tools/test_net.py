@@ -115,3 +115,10 @@ if __name__ == '__main__':
         multi_gpu_testing=args.multi_gpu_testing,
         check_expected_results=True,
     )
+
+'''
+python tools/test_net.py 
+--cfg OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_R-50-FPN_2x_190912/config.yaml 
+TEST.WEIGHTS OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_R-50-FPN_2x_190912/model_final.pkl 
+NUM_GPUS 1
+'''

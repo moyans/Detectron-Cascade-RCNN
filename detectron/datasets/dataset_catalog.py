@@ -241,6 +241,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_BagP1Data2019.json'
     },
+    'coco_2019_BagP2Data' : {
+        #  general sku test data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_BagP2Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_BagP2Data2019.json'
+    },
 
     'coco_2019_SkuDetData' : {
         #  general sku test data
@@ -249,6 +256,8 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_SkuDetData2019.json'
     },
+
+
 
 
 }
