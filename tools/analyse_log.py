@@ -15,7 +15,7 @@ if __name__ == '__main__':
     all_time = []
     all_lr = []
 
-    log_file = '/data/code/sunchao/Detectron-Cascade-RCNN/OUTPUT_DIR/sku110k/sku110k_e2e_cascade_rcnn_X-101-32x8d-FPN_2x_190918/train.log'
+    log_file = '/data/code/sunchao/Detectron-Cascade-RCNN/OUTPUT_DIR/sku110k/sku110k_e2e_cascade_rcnn_X-101-32x8d-FPN_4x_190919/train.log'
     rootDir = os.path.dirname(log_file)
 
     with open(log_file) as f:
