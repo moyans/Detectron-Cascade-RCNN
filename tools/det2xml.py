@@ -139,7 +139,7 @@ class mycaffe2(object):
     def __init__(self, cfg_file, weights, gpu_id=0, thresh_=0.5):
         self.gpu_id = gpu_id
         self.thresh = thresh_
-        self.classs = dummy_datasets.get_idtSKU_dataset()
+        self.classs = dummy_datasets.get_surveyPOSM_dataset()  # get_surveyPOSM_dataset get_idtSKU_dataset
         workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
         merge_cfg_from_file(cfg_file)
         cfg.NUM_GPUS = 1
@@ -193,13 +193,15 @@ if __name__ == '__main__':
 
     cwd = os.getcwd()
     args = parse_args()
-    cfg_file = os.path.join(cwd, args.cfg_file)
-    weights = os.path.join(cwd, args.model)
+    
+    cfg_file = args.cfg_file
+    weights = args.model
     assert os.path.exists(cfg_file)
     assert os.path.exists(weights)
 
-    de = mycaffe2(cfg_file, weights, thresh_=args.thresh)
-    detDir = os.path.join(cwd, args.test_dir)
+    det_API = mycaffe2(cfg_file, weights, thresh_=args.thresh)
+    detDir = args.test_dir
+    assert os.path.exists(detDir)
     detList = os.listdir(detDir)
 
     output_dir = os.path.join(cwd, 'Annotations')
@@ -209,7 +211,7 @@ if __name__ == '__main__':
     for idx, nname in enumerate(detList):
         print('loading {}, name: {}'.format(idx, nname))
         imgPath = os.path.join(detDir, nname)
-        predict_dict = de.detect(imgPath)
+        predict_dict = det_API.detect(imgPath)
 
         # '''按类别过滤，选取需要的类别'''
         # if predict_dict:
