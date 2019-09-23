@@ -3,7 +3,6 @@ MODEL:
   CONV_BODY: FPN.add_fpn_ResNet152_conv5_body
   NUM_CLASSES: 2
   FASTER_RCNN: True
-  MASK_ON: True
   CASCADE_ON: True
   CLS_AGNOSTIC_BBOX_REG: True  # default: False
 NUM_GPUS: 8
