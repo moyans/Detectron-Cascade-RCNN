@@ -264,7 +264,20 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_SkuDetTrainSetData2019.json'
     },
 
-
+    'coco_2019_ULPOSMPart1TrainSetData' : {
+        #  ul_posm part1_train data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_ULPOSMPart1TrainSetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_ULPOSMPart1TrainSetData2019.json'
+    },
+    'coco_2019_ULPOSMPart1CheckSetData' : {
+        #  ul_posm part1_test data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_ULPOSMPart1CheckSetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_ULPOSMPart1CheckSetData2019.json'
+    },
 
 
 }
