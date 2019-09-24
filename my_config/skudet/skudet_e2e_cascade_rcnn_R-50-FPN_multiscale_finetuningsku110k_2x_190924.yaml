@@ -28,7 +28,7 @@ CASCADE_RCNN:
   TEST_STAGE: 3
   TEST_ENSEMBLE: True
 TRAIN:
-  WEIGHTS: OUTPUT_DIR/sku110k_e2e_cascade_rcnn_R-50-FPN_multiscale_2x_190923/model_final.pkl
+  WEIGHTS: OUTPUT_DIR/sku110k/sku110k_e2e_cascade_rcnn_R-50-FPN_multiscale_2x_190923/model_final.pkl
   DATASETS: ('coco_2019_SkuDetTrainSetData',)
   SCALES: (600, 800, 1000,)
   MAX_SIZE: 1333
