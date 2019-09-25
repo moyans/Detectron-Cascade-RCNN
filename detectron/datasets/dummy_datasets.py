@@ -62,6 +62,14 @@ def get_idtSKU_dataset():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
 
+def get_ulposm_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '9996', '15701', '15704', '9994', '9997', '9995', '15703', '15702', '3508'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
 
 def test():
     print(get_surveyPOSM_dataset())
