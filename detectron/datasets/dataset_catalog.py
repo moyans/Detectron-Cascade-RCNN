@@ -278,7 +278,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_ULPOSMPart1CheckSetData2019.json'
     },
-
+    'coco_2019_ULPOSMPart2TrainSetData' : {
+        #  ul_posm part2_train data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_ULPOSMPart2TrainSetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_ULPOSMPart2TrainSetData2019.json'
+    },
 
 }
 
