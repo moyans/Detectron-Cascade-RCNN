@@ -28,7 +28,7 @@ RETINANET:
 TRAIN:
   WEIGHTS: pertrain_model/ImageNetPretrained/MSRA/R-50.pkl
   DATASETS: ('coco_2019_SKU110kData',)
-  SCALES: (600, 800, 1000)
+  SCALES: (800,)
   MAX_SIZE: 1333
   RPN_STRADDLE_THRESH: -1  # default 0
 TEST:
