@@ -139,7 +139,7 @@ class mycaffe2(object):
     def __init__(self, cfg_file, weights, gpu_id=0, thresh_=0.5):
         self.gpu_id = gpu_id
         self.thresh = thresh_
-        self.classs = dummy_datasets.get_surveyPOSM_dataset()  # get_surveyPOSM_dataset get_idtSKU_dataset
+        self.classs = dummy_datasets.get_idtSKU_dataset()  # get_surveyPOSM_dataset get_idtSKU_dataset get_ulposm_dataset
         workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
         merge_cfg_from_file(cfg_file)
         cfg.NUM_GPUS = 1

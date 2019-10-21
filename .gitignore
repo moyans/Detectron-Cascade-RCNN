@@ -30,6 +30,11 @@ detectron/datasets/data/*
 # Generated C files
 detectron/utils/cython_*.c
 
-ONLINE_MODELS/*
+Model_Online/*
 pertrain_model/*
 OUTPUT_DIR/*
+*.pkl
+*.json
+pertrain_model
+*.stdout
+test/*
