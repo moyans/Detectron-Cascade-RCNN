@@ -1,7 +1,7 @@
 MODEL:
   TYPE: generalized_rcnn
   CONV_BODY: FPN.add_fpn_ResNet50_conv5_body
-  NUM_CLASSES: 2
+  NUM_CLASSES: 11
   FASTER_RCNN: True
 NUM_GPUS: 8
 SOLVER:
@@ -34,4 +34,5 @@ TEST:
   NMS: 0.5
   RPN_PRE_NMS_TOP_N: 1000  # Per FPN level
   RPN_POST_NMS_TOP_N: 1000
+  DETECTIONS_PER_IM: 1000
 OUTPUT_DIR: .
