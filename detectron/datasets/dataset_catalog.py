@@ -286,7 +286,7 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_ULPOSMPart2TrainSetData2019.json'
     },
 
-    # POSM_191018
+    # AG POSM_191018
     'coco_2019_AGPOSM191018TrainSetData' : {
         #  ag_posm part12_train data
         _IM_DIR:
@@ -315,6 +315,16 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_AGPOSM191018MergeCheckData2019.json'
     },
+
+    # Abbott_posm
+    'coco_2019_AbbottPOSMP1TrainSetData' : {
+        #  Abbott_posm part1_train data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_AbbottPOSMP1TrainSetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1TrainSetData2019.json'
+    },
+    
 }
 
 

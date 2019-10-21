@@ -86,6 +86,14 @@ def get_agposm191018_merge_dataset():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
 
+def get_abbottposm191018_d1_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '19294', '19279', '19286', '19285', '19272', '19273', '19274', '19275', '19277', '19297', '19276', '19298', '19293', '19296'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
 def test():
     print(get_surveyPOSM_dataset())
 
