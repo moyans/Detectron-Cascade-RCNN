@@ -285,21 +285,35 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_ULPOSMPart2TrainSetData2019.json'
     },
-    
+
     # POSM_191018
     'coco_2019_AGPOSM191018TrainSetData' : {
-        #  ul_posm part2_train data
+        #  ag_posm part12_train data
         _IM_DIR:
             _DATA_DIR + '/coco/coco_AGPOSM191018TrainSetData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_AGPOSM191018TrainSetData2019.json'
     },
     'coco_2019_AGPOSM191018CheckData' : {
-        #  ul_posm part2_train data
+        #  ag_posm part12_test data
         _IM_DIR:
             _DATA_DIR + '/coco/coco_AGPOSM191018CheckData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_AGPOSM191018CheckData2019.json'
+    },
+    'coco_2019_AGPOSM191018MergeTrainSetData' : {
+        #  ag_posm part12_train Merge data 
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_AGPOSM191018TrainSetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_AGPOSM191018MergeTrainSetData2019.json'
+    },
+    'coco_2019_AGPOSM191018MergeCheckData' : {
+        #  ag_posm part12_test Merge data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_AGPOSM191018CheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_AGPOSM191018MergeCheckData2019.json'
     },
 }
 

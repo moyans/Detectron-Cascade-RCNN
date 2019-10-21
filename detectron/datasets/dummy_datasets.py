@@ -70,6 +70,21 @@ def get_ulposm_dataset():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
 
+def get_agposm191018_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '19259', '19258', '19263', '19256', '19257', '19262', '19265', '19264', '19266', '19267'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
+def get_agposm191018_merge_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '19259', '19263', '19262', '19264', '19256', '19258', '19266', '19267', '19260'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
 
 def test():
     print(get_surveyPOSM_dataset())
