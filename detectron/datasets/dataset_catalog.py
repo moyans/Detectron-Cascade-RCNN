@@ -333,6 +333,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_LibyPOSMP1TrainSetData2019.json'
     },
+    'coco_2019_LibyPOSMP2TrainSetData' : {
+        #  liby_posm part1_train data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_LibyPOSMP2TrainSetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_LibyPOSMP2TrainSetData2019.json'
+    },
     'coco_2019_LibyPOSMCheckData' : {
         #  liby_posm part1_train data
         _IM_DIR:
@@ -340,6 +347,7 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_LibyPOSMCheckData2019.json'
     },
+
     
 }
 
