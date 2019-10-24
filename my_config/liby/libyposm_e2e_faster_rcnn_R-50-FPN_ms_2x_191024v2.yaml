@@ -22,7 +22,7 @@ FAST_RCNN:
   ROI_XFORM_SAMPLING_RATIO: 2
 TRAIN:
   WEIGHTS: pertrain_model/ImageNetPretrained/MSRA/R-50.pkl
-  DATASETS: ('coco_2019_LibyPOSMP1TrainSetData',)
+  DATASETS: ('coco_2019_LibyPOSMP1TrainSetData', 'coco_2019_LibyPOSMP2TrainSetData', )
   SCALES: (600, 800, 1000)
   MAX_SIZE: 1333
   BATCH_SIZE_PER_IM: 512
