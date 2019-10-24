@@ -138,6 +138,8 @@ class JsonDataset(object):
         im_path = os.path.join(
             self.image_directory, self.image_prefix + entry['file_name']
         )
+        if not os.path.exists(im_path):
+            print('Image \'{}\' not found'.format(im_path))
         assert os.path.exists(im_path), 'Image \'{}\' not found'.format(im_path)
         entry['image'] = im_path
         entry['flipped'] = False
