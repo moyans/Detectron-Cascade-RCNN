@@ -22,6 +22,7 @@ from __future__ import unicode_literals
 
 from past.builtins import basestring
 import logging
+import sys
 import numpy as np
 
 from detectron.core.config import cfg
@@ -29,6 +30,9 @@ from detectron.datasets.json_dataset import JsonDataset
 import detectron.utils.boxes as box_utils
 import detectron.utils.keypoints as keypoint_utils
 import detectron.utils.segms as segm_utils
+
+reload(sys)
+sys.setdefaultencoding( "utf-8" )
 
 logger = logging.getLogger(__name__)
 
