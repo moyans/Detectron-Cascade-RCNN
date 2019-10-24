@@ -1,3 +1,4 @@
+# coding: utf-8
 # Copyright (c) 2017-present, Facebook, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,6 +31,7 @@ import cPickle as pickle
 import logging
 import numpy as np
 import os
+import sys
 import scipy.sparse
 
 # Must happen before importing COCO API (which imports matplotlib)
@@ -44,6 +46,9 @@ from detectron.utils.timer import Timer
 import detectron.datasets.dataset_catalog as dataset_catalog
 import detectron.utils.boxes as box_utils
 import detectron.utils.segms as segm_utils
+
+reload(sys)
+sys.setdefaultencoding( "utf-8" )
 
 logger = logging.getLogger(__name__)
 
