@@ -89,10 +89,29 @@ def get_agposm191018_merge_dataset():
 def get_abbottposm191018_d1_dataset():
     ds = AttrDict()
     classes = [
-        '__background__', '19294', '19279', '19286', '19285', '19272', '19273', '19274', '19275', '19277', '19297', '19276', '19298', '19293', '19296'
+        # '__background__', '19294', '19279', '19286', '19285', '19272', '19273', '19274', '19275', '19277', '19297', '19276', '19298', '19293', '19296'
+        '__background__', '18669', '17913', '18666', '18666', '17903', '17904', '17904', '17904', '17907', '19268', '17907', '19270', '18669', '19268'
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
+
+def get_agposm191018_merge_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '19259', '19263', '19262', '19264', '19256', '19258', '19266', '19267', '19260'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
+def get_libyposm191024_dataset():
+    ds = AttrDict()
+    classes = [
+        '__background__', '18918', '19302', '18917', '19301', '19300'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
+
 
 def test():
     print(get_surveyPOSM_dataset())
