@@ -217,29 +217,34 @@ def _log_detection_eval_metrics(json_dataset, coco_eval):
         return ind
 
     IoU_lo_thresh = 0.5
-    IoU_hi_thresh = 0.95
-    ind_lo = _get_thr_ind(coco_eval, IoU_lo_thresh)
-    ind_hi = _get_thr_ind(coco_eval, IoU_hi_thresh)
-    # precision has dims (iou, recall, cls, area range, max dets)
-    # area range index 0: all area ranges
-    # max dets index 2: 100 per image
-    precision = coco_eval.eval['precision'][ind_lo:(ind_hi + 1), :, :, 0, 2]
-    ap_default = np.mean(precision[precision > -1])
-    logger.info(
-        '~~~~ Mean and per-category AP @ IoU=[{:.2f},{:.2f}] ~~~~'.format(
-            IoU_lo_thresh, IoU_hi_thresh))
-    logger.info('{:.1f}'.format(100 * ap_default))
-    for cls_ind, cls in enumerate(json_dataset.classes):
-        if cls == '__background__':
-            continue
-        # minus 1 because of __background__
-        precision = coco_eval.eval['precision'][
-            ind_lo:(ind_hi + 1), :, cls_ind - 1, 0, 2]
-        ap = np.mean(precision[precision > -1])
-        logger.info('{:.1f}'.format(100 * ap))
-    logger.info('~~~~ Summary metrics ~~~~')
-    #coco_eval.summarize()
-    _coco_summarize(coco_eval)
+    # IoU_hi_thresh = 0.95
+
+    for IoU_hi_thresh in [0.5, 0.95]:
+        print("AP in IOU = {}".format(IoU_hi_thresh))
+
+        ind_lo = _get_thr_ind(coco_eval, IoU_lo_thresh)
+        ind_hi = _get_thr_ind(coco_eval, IoU_hi_thresh)
+        # precision has dims (iou, recall, cls, area range, max dets)
+        # area range index 0: all area ranges
+        # max dets index 2: 100 per image
+        precision = coco_eval.eval['precision'][ind_lo:(ind_hi + 1), :, :, 0, 2]
+        ap_default = np.mean(precision[precision > -1])
+        logger.info(
+            '~~~~ Mean and per-category AP @ IoU=[{:.2f},{:.2f}] ~~~~'.format(
+                IoU_lo_thresh, IoU_hi_thresh))
+        logger.info('{:.1f}'.format(100 * ap_default))
+        for cls_ind, cls in enumerate(json_dataset.classes):
+            if cls == '__background__':
+                continue
+            # minus 1 because of __background__
+            precision = coco_eval.eval['precision'][
+                ind_lo:(ind_hi + 1), :, cls_ind - 1, 0, 2]
+            ap = np.mean(precision[precision > -1])
+            # logger.info('{:.1f}'.format(100 * ap))
+            logger.info('{}_AP: {:.1f}'.format(cls, 100 * ap))
+        logger.info('~~~~ Summary metrics ~~~~')
+        #coco_eval.summarize()
+        _coco_summarize(coco_eval)
 
 
 def _coco_summarize(evaluator):
@@ -279,28 +284,50 @@ def _coco_summarize(evaluator):
         print(iStr.format(titleStr, typeStr, iouStr, areaRng, maxDets, mean_s))
         return mean_s
 
+    # def _summarizeDets():
+    #     stats = np.zeros((16,))
+    #     iouThrs = evaluator.params.iouThrs
+    #     maxDets = evaluator.params.maxDets
+
+    #     stats[0] = _summarize(1)
+    #     stats[1] = _summarize(1, iouThr=.5, maxDets=maxDets[2])
+    #     stats[2] = _summarize(1, iouThr=.75, maxDets=maxDets[2])
+    #     stats[3] = _summarize(1, areaRng='small', maxDets=maxDets[2])
+    #     stats[4] = _summarize(1, areaRng='medium', maxDets=maxDets[2])
+    #     stats[5] = _summarize(1, areaRng='large', maxDets=maxDets[2])
+    #     stats[6] = _summarize(0, maxDets=maxDets[0])
+    #     stats[7] = _summarize(0, maxDets=maxDets[1])
+    #     stats[8] = _summarize(0, maxDets=maxDets[2])
+    #     stats[9] = _summarize(0, areaRng='small', maxDets=maxDets[2])
+    #     stats[10] = _summarize(0, areaRng='medium', maxDets=maxDets[2])
+    #     stats[11] = _summarize(0, areaRng='large', maxDets=maxDets[2])
+
+    #     stats[12] = _summarize(1, iouThr=iouThrs[2], maxDets=maxDets[2])
+    #     stats[13] = _summarize(1, iouThr=iouThrs[4], maxDets=maxDets[2])
+    #     stats[14] = _summarize(1, iouThr=iouThrs[6], maxDets=maxDets[2])
+    #     stats[15] = _summarize(1, iouThr=iouThrs[8], maxDets=maxDets[2])
+    #     return stats
+
     def _summarizeDets():
         stats = np.zeros((16,))
         iouThrs = evaluator.params.iouThrs
         maxDets = evaluator.params.maxDets
 
-        stats[0] = _summarize(1)
-        stats[1] = _summarize(1, iouThr=.5, maxDets=maxDets[2])
-        stats[2] = _summarize(1, iouThr=.75, maxDets=maxDets[2])
-        stats[3] = _summarize(1, areaRng='small', maxDets=maxDets[2])
-        stats[4] = _summarize(1, areaRng='medium', maxDets=maxDets[2])
-        stats[5] = _summarize(1, areaRng='large', maxDets=maxDets[2])
-        stats[6] = _summarize(0, maxDets=maxDets[0])
-        stats[7] = _summarize(0, maxDets=maxDets[1])
-        stats[8] = _summarize(0, maxDets=maxDets[2])
-        stats[9] = _summarize(0, areaRng='small', maxDets=maxDets[2])
-        stats[10] = _summarize(0, areaRng='medium', maxDets=maxDets[2])
-        stats[11] = _summarize(0, areaRng='large', maxDets=maxDets[2])
-
-        stats[12] = _summarize(1, iouThr=iouThrs[2], maxDets=maxDets[2])
-        stats[13] = _summarize(1, iouThr=iouThrs[4], maxDets=maxDets[2])
-        stats[14] = _summarize(1, iouThr=iouThrs[6], maxDets=maxDets[2])
-        stats[15] = _summarize(1, iouThr=iouThrs[8], maxDets=maxDets[2])
+        stats[0] = _summarize(1, maxDets=100)
+        stats[1] = _summarize(1, iouThr=.5, maxDets=100)
+        stats[2] = _summarize(1, iouThr=.65, maxDets=100)
+        stats[3] = _summarize(1, iouThr=.75, maxDets=100)
+        stats[4] = _summarize(1, iouThr=.85, maxDets=100)
+        stats[5] = _summarize(1, iouThr=.95, maxDets=100)
+        stats[6] = _summarize(0, iouThr=.5, maxDets=100)
+        stats[8] = _summarize(1, maxDets=maxDets[-1])
+        stats[9] = _summarize(1, iouThr=.5, maxDets=maxDets[-1])
+        stats[10] = _summarize(1, iouThr=.65, maxDets=maxDets[-1])
+        stats[11] = _summarize(1, iouThr=.75, maxDets=maxDets[-1])
+        stats[12] = _summarize(1, iouThr=.85, maxDets=maxDets[-1])
+        stats[13] = _summarize(1, iouThr=.95, maxDets=maxDets[-1])
+        stats[14] = _summarize(1, iouThr=.70, maxDets=maxDets[-1])
+        stats[15] = _summarize(0, iouThr=.5, maxDets=maxDets[-1])
         return stats
 
     def _summarizeKps():

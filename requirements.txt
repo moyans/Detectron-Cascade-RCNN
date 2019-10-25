@@ -6,3 +6,8 @@ setuptools
 Cython
 mock
 scipy
+protobuf
+future
+pyyaml==4.2b2
+networkx
+enum
