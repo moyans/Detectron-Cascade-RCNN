@@ -356,7 +356,38 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_LibyPOSMCheckData2019.json'
     },
 
-    
+    # invoice 发票
+    'coco_2019_InvoiceDetTrainP1Data' : {
+        #  invoice train data191025
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_InvoiceDetTrainP1Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_InvoiceDetTrainP1Data2019.json'
+    },
+    'coco_2019_InvoiceDetCheckData' : {
+        #  invoice val data191025
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_InvoiceDetCheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_InvoiceDetCheckData2019.json'
+    },
+
+    # 立白sku
+    'coco_2019_LibyTrainP1Data' : {
+        #  liby train data191026
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_LibyTrainP1Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_LibyTrainP1Data2019.json'
+    },
+    'coco_2019_LibyCheckData' : {
+        #  liby val data191026
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_LibyCheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_LibyCheck2019.json'
+    },
+
 }
 
 
