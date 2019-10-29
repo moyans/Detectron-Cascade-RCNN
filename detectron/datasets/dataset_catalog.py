@@ -388,6 +388,14 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_LibyCheck2019.json'
     },
 
+    # 玛氏糖果sku 180802
+    'coco_2019_MarsCandies180802Data' : {
+        #  Mars sku train data 180802
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_MarsCandies180802Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_MarsCandies180802Data2019.json'
+    },   
 }
 
 

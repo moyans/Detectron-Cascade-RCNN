@@ -106,8 +106,8 @@ def get_agposm191018_merge_dataset():
 def get_libyposm191024_dataset():
     ds = AttrDict()
     classes = [
-        # '__background__', '18918', '19302', '18917', '19301', '19300'
-         '__background__', '18918', '18918', '18917', '18919', '18919'
+        '__background__', '18918', '19302', '18917', '19301', '19300'
+        #  '__background__', '18918', '18918', '18917', '18919', '18919'
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
