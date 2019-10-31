@@ -428,6 +428,22 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_MarsCandies180802Data2019.json'
     },   
+
+    # POSMDet 191101
+    'coco_2019_POSMDet191101TrainData' : {
+        #  POSMDet train data 191101
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_POSMDet191101TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_POSMDet191101TrainData2019.json'
+    },       
+    'coco_2019_POSMDet191101CheckData' : {
+        #  POSMDet test data 191101
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_POSMDet191101CheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_POSMDet191101CheckData2019.json'
+    }, 
 }
 
 
