@@ -49,9 +49,16 @@ cv2.ocl.setUseOpenCL(False)
 def parse_args():
     parser = argparse.ArgumentParser(description='Test a Fast R-CNN network')
     parser.add_argument(
-        '--cfg',
+        '--c',
         dest='cfg_file',
         help='optional config file',
+        default=None,
+        type=str
+    )
+    parser.add_argument(
+        '--m',
+        dest='test_model',
+        help='test model file',
         default=None,
         type=str
     )
@@ -105,16 +112,23 @@ if __name__ == '__main__':
     logger.info('Testing with config:')
     logger.info(pprint.pformat(cfg))
 
-    while not os.path.exists(cfg.TEST.WEIGHTS) and args.wait:
-        logger.info('Waiting for \'{}\' to exist...'.format(cfg.TEST.WEIGHTS))
-        time.sleep(10)
-
-    run_inference(
-        cfg.TEST.WEIGHTS,
-        ind_range=args.range,
-        multi_gpu_testing=args.multi_gpu_testing,
-        check_expected_results=True,
-    )
+    if args.test_model is not None:
+        run_inference(
+            args.test_model,
+            ind_range=args.range,
+            multi_gpu_testing=args.multi_gpu_testing,
+            check_expected_results=True,
+        )
+    else:
+        while not os.path.exists(cfg.TEST.WEIGHTS) and args.wait:
+            logger.info('Waiting for \'{}\' to exist...'.format(cfg.TEST.WEIGHTS))
+            time.sleep(10)
+        run_inference(
+            cfg.TEST.WEIGHTS,
+            ind_range=args.range,
+            multi_gpu_testing=args.multi_gpu_testing,
+            check_expected_results=True,
+        )
 
 '''
 python tools/test_net.py 
@@ -122,4 +136,12 @@ python tools/test_net.py
 --multi-gpu-testing
 TEST.WEIGHTS OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_R-50-FPN_2x_190912/model_final.pkl 
 NUM_GPUS 2
+
+
+python tools/test_net.py 
+--c OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_R-50-FPN_2x_190912/config.yaml 
+--m OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_R-50-FPN_2x_190912/model_final.pkl 
+--multi-gpu-testing
+NUM_GPUS 2
+
 '''
