@@ -444,6 +444,22 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_POSMDet191101CheckData2019.json'
     }, 
+
+    # 亿滋sku 191028
+    'coco_2019_Mondelez191028TrainData' : {
+        #  Mondelez sku train data 191028
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Mondelez191028TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Mondelez191028TrainData2019.json'
+    },  
+    'coco_2019_Mondelez191028CheckData' : {
+        #  Mondelez sku test data 191028
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Mondelez191028CheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Mondelez191028CheckData2019.json'
+    },  
 }
 
 
