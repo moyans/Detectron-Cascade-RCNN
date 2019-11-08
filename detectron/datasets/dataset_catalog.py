@@ -395,20 +395,35 @@ _DATASETS = {
     #     _ANN_FN:
     #         _DATA_DIR + '/coco/annotations/instances_LibyPOSMCheckData2019.json'
     # },
-    # liby_posm 191029
-    'coco_2019_LibyPOSM191019TrainData' : {
-        #  liby_posm part1_train data
+    # # liby_posm 191029 del
+    # 'coco_2019_LibyPOSM191019TrainData' : {
+    #     #  liby_posm part1_train data
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_LibyPOSM191019TrainData2019',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_LibyPOSM191019TrainData2019.json'
+    # },
+    # 'coco_2019_LibyPOSM191019CheckData' : {
+    #     #  liby_posm part1_train data
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_LibyPOSM191019CheckData2019',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_LibyPOSM191019CheckData2019.json'
+    # },
+    # liby_posm 191107
+    'coco_2019_LibyPOSM191107TrainData' : {
+        #  liby_posm 191107 train data
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_LibyPOSM191019TrainData2019',
+            _DATA_DIR + '/coco/coco_LibyPOSM191107TrainData2019',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_LibyPOSM191019TrainData2019.json'
+            _DATA_DIR + '/coco/annotations/instances_LibyPOSM191107TrainData2019.json'
     },
-    'coco_2019_LibyPOSM191019CheckData' : {
-        #  liby_posm part1_train data
+    'coco_2019_LibyPOSM191107CheckData' : {
+        #  liby_posm 191107 test data
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_LibyPOSM191019CheckData2019',
+            _DATA_DIR + '/coco/coco_LibyPOSM191107CheckData2019',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_LibyPOSM191019CheckData2019.json'
+            _DATA_DIR + '/coco/annotations/instances_LibyPOSM191107CheckData2019.json'
     },
 
 
