@@ -94,11 +94,19 @@ def get_agposm191018_dataset():
 #     ds.classes = {i: name for i, name in enumerate(classes)}
 #     return ds
 
-def get_abbottposm191018_d1_dataset():
+# def get_abbottposm191018_d1_dataset():
+#     ds = AttrDict()
+#     classes = [
+#         # '__background__', '19294', '19279', '19286', '19285', '19272', '19273', '19274', '19275', '19277', '19297', '19276', '19298', '19293', '19296', '19283'
+#         '__background__', '18669', '17913', '18666', '18666', '17903', '17904', '17904', '17904', '17907', '19268', '17907', '19270', '18669', '19268', '18658'
+#     ]
+#     ds.classes = {i: name for i, name in enumerate(classes)}
+#     return ds
+def get_abbottposm191108_dataset():
     ds = AttrDict()
     classes = [
-        # '__background__', '19294', '19279', '19286', '19285', '19272', '19273', '19274', '19275', '19277', '19297', '19276', '19298', '19293', '19296'
-        '__background__', '18669', '17913', '18666', '18666', '17903', '17904', '17904', '17904', '17907', '19268', '17907', '19270', '18669', '19268'
+        '__background__', '19285', '19279', '19294', '19275', '19274', '19273', '19276', '19277', '19272', '19283', '19297', '19298', '19293', '19296'
+        
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
@@ -115,8 +123,8 @@ def get_unilevelAgPosm191029_dataset():
 def get_libyposm191024_dataset():
     ds = AttrDict()
     classes = [
-        # '__background__', '18918', '19302', '18917', '19301', '19300'
-         '__background__', '18918', '18918', '18917', '18919', '18919'
+        '__background__', '18918', '19302', '18917', '19301', '19300'
+        #  '__background__', '18918', '18918', '18917', '18919', '18919'
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
