@@ -483,6 +483,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_POSMDet191101CheckData2019.json'
     }, 
+    'coco_2019_GeneralPOSMDet191111TrainData' : {
+        #  general POSMDet train data 191111
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GeneralPOSMDet191111TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GeneralPOSMDet191111TrainData2019.json'
+    }, 
 
     # 亿滋sku 191028
     'coco_2019_Mondelez191028TrainData' : {

@@ -24,7 +24,7 @@ import cv2  # NOQA (Must import before importing caffe2 due to bug in cv2)
 import os
 import sys
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -62,6 +62,13 @@ def parse_args():
         dest='thresh',
         help='bbox thresh',
         default=0.5,
+        type=float
+    )
+    parser.add_argument(
+        '--gpu',
+        dest='gpu',
+        help='gpu ID',
+        default=1,
         type=float
     )
     return parser.parse_args()
@@ -139,7 +146,7 @@ class mycaffe2(object):
     def __init__(self, cfg_file, weights, gpu_id=1, thresh_=0.5):
         self.gpu_id = gpu_id
         self.thresh = thresh_
-        self.classs = dummy_datasets.get_idtSKU_dataset()  # get_surveyPOSM_dataset get_idtSKU_dataset get_ulposm_dataset
+        self.classs = dummy_datasets.get_libyposm191024_dataset()  # get_surveyPOSM_dataset get_idtSKU_dataset get_ulposm_dataset
         workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
         merge_cfg_from_file(cfg_file)
         cfg.NUM_GPUS = 1
@@ -198,8 +205,9 @@ if __name__ == '__main__':
     weights = args.model
     assert os.path.exists(cfg_file)
     assert os.path.exists(weights)
+    gpu_ID = int(args.gpu)
 
-    det_API = mycaffe2(cfg_file, weights, thresh_=args.thresh)
+    det_API = mycaffe2(cfg_file, weights, thresh_=args.thresh, gpu_id=gpu_ID)
     detDir = args.test_dir
     assert os.path.exists(detDir)
     detList = os.listdir(detDir)
