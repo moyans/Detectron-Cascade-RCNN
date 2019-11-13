@@ -520,6 +520,20 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_Gongniou191107CheckData2019.json'
     },  
+
+    # 百事sku 191112
+    'coco_2019_Pepsi191112TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Pepsi191112TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Pepsi191112TrainData2019.json'
+    },  
+    'coco_2019_Pepsi191112CheckData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Pepsi191112CheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Pepsi191112CheckData2019.json'
+    },  
 }
 
 
