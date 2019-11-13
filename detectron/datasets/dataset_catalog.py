@@ -506,6 +506,20 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_Mondelez191028CheckData2019.json'
     },  
+
+    # 公牛sku 191107
+    'coco_2019_Gongniu191107TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Gongniu191107TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Gongniu191107TrainData2019.json'
+    },  
+    'coco_2019_Gongniou191107CheckData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Gongniou191107CheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Gongniou191107CheckData2019.json'
+    },  
 }
 
 
