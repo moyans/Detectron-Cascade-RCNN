@@ -39,3 +39,4 @@ pertrain_model
 *.stdout
 test/*
 train/*
+.python_version
