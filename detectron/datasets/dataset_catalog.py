@@ -356,7 +356,7 @@ _DATASETS = {
     #     _ANN_FN:
     #         _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP3TrainSetData2019.json'
     # },
-    # Abbott_posm del
+    # Abbott_posm
     'coco_2019_AbbottPOSMP1108TrainData' : {
         #  Abbott_posm train 1108 data
         _IM_DIR:
@@ -364,13 +364,19 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1108TrainData2019.json'
     },
-    # Abbott_posm
     'coco_2019_AbbottPOSMP1108CheckData' : {
         #  Abbott_posm test 1108 data
         _IM_DIR:
             _DATA_DIR + '/coco/coco_AbbottPOSMP1108CheckData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1108CheckData2019.json'
+    },
+    'coco_2019_AbbottPOSMP1120TrainData' : {
+        #  Abbott_posm train 1120 data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_AbbottPOSMP1120TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1120TrainData2019.json'
     },
 
     # liby_posm 191024 del

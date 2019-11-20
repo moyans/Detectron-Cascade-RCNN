@@ -137,7 +137,7 @@ if __name__ == '__main__':
 
     # det with images
 
-    testDir = '/data/Data/美赞臣/191106问题反馈/'
+    testDir = '/data/Data/百事/pricetag/Data191112/train/'
     test_imgDir = os.path.join(testDir, 'JPEGImages')
     outputDir = os.path.join(testDir, 'Annotations')
     pathExit(outputDir)
