@@ -549,6 +549,34 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_Pepsi191112CheckData2019.json'
     },  
 
+    # 万宝路
+    'coco_2014_Marlboro190627Data' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Marlboro190627Data2014',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Marlboro190627Data2014.json'
+    },  
+    'coco_2014_Marlboro190627CheckData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Marlboro190627CheckData2014',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Marlboro190627CheckData2014.json'
+    },  
+    # 广东中烟
+    'coco_2019_Tobacco191112TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Tobacco191112TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Tobacco191112TrainData2019.json'
+    },  
+    'coco_2019_Tobacco191112CheckData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Tobacco191112CheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Tobacco191112CheckData2019.json'
+    }, 
+
+
 }
 
 
