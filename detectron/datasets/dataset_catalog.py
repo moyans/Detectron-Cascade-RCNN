@@ -448,6 +448,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_InvoiceDetCheckData2019.json'
     },
+    'coco_2019_InvoiceDetTrainP2Data' : {
+        #  invoice train data191127
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_InvoiceDetTrainP2Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_InvoiceDetTrainP2Data2019.json'
+    },
 
     # 立白sku
     'coco_2019_LibyTrainP1Data' : {
@@ -561,7 +568,8 @@ _DATASETS = {
             _DATA_DIR + '/coco/coco_Marlboro190627CheckData2014',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_Marlboro190627CheckData2014.json'
-    },  
+    }, 
+
     # 广东中烟
     'coco_2019_Tobacco191112TrainData' : {
         _IM_DIR:
@@ -576,7 +584,82 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_Tobacco191112CheckData2019.json'
     }, 
 
+    # 斑布纸
+    'coco_2019_Babo191124TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Babo191124TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Babo191124TrainData2019.json'
+    },  
+    'coco_2019_Babo191124CheckData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Babo191124CheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Babo191124CheckData2019.json'
+    }, 
 
+    # 价格牌和价格区域
+    'coco_2019_PriceTag2RegionTrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_PriceTag2RegionTrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_PriceTag2RegionTrainData2019.json'
+    },  
+    'coco_2019_PriceTag2RegionCheckData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_PriceTag2RegionCheckData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_PriceTag2RegionCheckData2019.json'
+    },  
+
+    # Art
+    'coco_2019_TextArtTrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TextArtTrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TextArtTrainData2019.json'
+    }, 
+    # # DAS
+    # 'coco_2019_TextDASTrainData' : {
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_TextDASTrainData2019',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_TextDASTrainData2019.json'
+    # }, 
+    # LSVT
+    'coco_2019_TextLSVTTrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TextLSVTTrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TextLSVTTrainData2019.json'
+    }, 
+    # MTWI
+    'coco_2019_TextMTWITrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TextMTWITrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TextMTWITrainData2019.json'
+    }, 
+    # RCTW
+    'coco_2019_TextRCTWTrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TextRCTWTrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TextRCTWTrainData2019.json'
+    }, 
+    # ReCTS
+    'coco_2019_TextReCTSTrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TextReCTSTrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TextReCTSTrainData2019.json'
+    }, 
+    'coco_2019_TextReCTSCheckData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TextReCTSTrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TextReCTSCheckData2019.json'
+    }, 
 }
 
 
