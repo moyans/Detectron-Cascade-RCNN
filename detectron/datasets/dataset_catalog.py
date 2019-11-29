@@ -434,26 +434,19 @@ _DATASETS = {
 
 
     # invoice 发票
-    'coco_2019_InvoiceDetTrainP1Data' : {
-        #  invoice train data191025
+    'coco_2019_InvoiceDet191129TrainData' : {
+        #  invoice train data191129
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_InvoiceDetTrainP1Data2019',
+            _DATA_DIR + '/coco/coco_InvoiceDet191129Data2019',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_InvoiceDetTrainP1Data2019.json'
+            _DATA_DIR + '/coco/annotations/instances_InvoiceDet191129TrainData2019.json'
     },
-    'coco_2019_InvoiceDetCheckData' : {
-        #  invoice val data191025
+    'coco_2019_InvoiceDet191129CheckData' : {
+        #  invoice val data191129
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_InvoiceDetCheckData2019',
+            _DATA_DIR + '/coco/coco_InvoiceDet191129Data2019',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_InvoiceDetCheckData2019.json'
-    },
-    'coco_2019_InvoiceDetTrainP2Data' : {
-        #  invoice train data191127
-        _IM_DIR:
-            _DATA_DIR + '/coco/coco_InvoiceDetTrainP2Data2019',
-        _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_InvoiceDetTrainP2Data2019.json'
+            _DATA_DIR + '/coco/annotations/instances_InvoiceDet191129CheckData2019.json'
     },
 
     # 立白sku
