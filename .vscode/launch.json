@@ -12,14 +12,14 @@
             "console": "integratedTerminal"
             // det2xml
             // "args": [
-            //     "--m", "ONLINE_MODELS/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424/model_final.pkl",
-            //     "--c", "ONLINE_MODELS/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424.yaml",
-            //     "--t", "JPEGImages/"
+            //     "--m", "OUTPUT_DIR/pepsi/pepsidet_e2e_cascade_rcnn_R-50-FPN_multiscale_2x_191114/model_final.pkl",
+            //     "--c", "OUTPUT_DIR/pepsi/pepsidet_e2e_cascade_rcnn_R-50-FPN_multiscale_2x_191114/config.yaml",
+            //     "--t", "/home/train/桌面/test/JPEGImages/"
             // test_net.py
-            "args": [
-                "--cfg", "OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_X-101-64x4d-FPN_2x_190911/sku110k_e2e_faster_rcnn_X-101-64x4d-FPN_2x_190911.yaml",
-                "TEST.WEIGHTS", "OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_X-101-64x4d-FPN_2x_190911/model_final.pkl",
-                "NUM_GPUS", "1"
+            // "args": [
+            //     "--cfg", "OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_X-101-64x4d-FPN_2x_190911/sku110k_e2e_faster_rcnn_X-101-64x4d-FPN_2x_190911.yaml",
+            //     "TEST.WEIGHTS", "OUTPUT_DIR/sku110k/sku110k_e2e_faster_rcnn_X-101-64x4d-FPN_2x_190911/model_final.pkl",
+            //     "NUM_GPUS", "1"
             ]
             ]
         }

@@ -263,6 +263,22 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_SkuDetTrainSetData2019.json'
     },
+    'coco_2019_SKUTrainDetData' : {
+        #  20191203 general sku train data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SKUDetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SKUTrainDetData2019.json'
+    },
+    'coco_2019_SKUTestDetData' : {
+        #  20191203 general sku train data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SKUDetData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SKUTestDetData2019.json'
+    },
+
+
 
     'coco_2019_ULPOSMPart1TrainSetData' : {
         #  ul_posm part1_train data
@@ -357,27 +373,43 @@ _DATASETS = {
     #         _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP3TrainSetData2019.json'
     # },
     # Abbott_posm
-    'coco_2019_AbbottPOSMP1108TrainData' : {
-        #  Abbott_posm train 1108 data
+    # 'coco_2019_AbbottPOSMP1108TrainData' : {
+    #     #  Abbott_posm train 1108 data
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_AbbottPOSMP1108TrainData2019',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1108TrainData2019.json'
+    # },
+    # 'coco_2019_AbbottPOSMP1108CheckData' : {
+    #     #  Abbott_posm test 1108 data
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_AbbottPOSMP1108CheckData2019',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1108CheckData2019.json'
+    # },
+    # 'coco_2019_AbbottPOSMP1120TrainData' : {
+    #     #  Abbott_posm train 1120 data
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_AbbottPOSMP1120TrainData2019',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1120TrainData2019.json'
+    # },
+    #  abbott 191204 
+    'coco_2019_AbbottPOSMP1204TrainData' : {
+        #  Abbott_posm train 191204 data
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_AbbottPOSMP1108TrainData2019',
+            _DATA_DIR + '/coco/coco_AbbottPOSMP1204Data2019',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1108TrainData2019.json'
+            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1204TrainData2019.json'
     },
-    'coco_2019_AbbottPOSMP1108CheckData' : {
-        #  Abbott_posm test 1108 data
+    'coco_2019_AbbottPOSMP1204TestData' : {
+        #  Abbott_posm test 191204 data
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_AbbottPOSMP1108CheckData2019',
+            _DATA_DIR + '/coco/coco_AbbottPOSMP1204Data2019',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1108CheckData2019.json'
+            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1204TestData2019.json'
     },
-    'coco_2019_AbbottPOSMP1120TrainData' : {
-        #  Abbott_posm train 1120 data
-        _IM_DIR:
-            _DATA_DIR + '/coco/coco_AbbottPOSMP1120TrainData2019',
-        _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1120TrainData2019.json'
-    },
+
 
     # liby_posm 191024 del
     # 'coco_2019_LibyPOSMP1TrainSetData' : {
@@ -659,6 +691,15 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_TextReCTSCheckData2019.json'
     }, 
+
+    'coco_2019_DelData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_DelData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_DelData2019.json'
+    }, 
+
+
 }
 
 

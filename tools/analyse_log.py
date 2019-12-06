@@ -15,7 +15,7 @@ if __name__ == '__main__':
     all_time = []
     all_lr = []
 
-    log_file = '/data/code/sunchao/Detectron-Cascade-RCNN/OUTPUT_DIR/liby/libyposm_e2e_faster_rcnn_R-50-FPN_ms_2x_191109/train.log'
+    log_file = '/data/code/sunchao/Detectron-Cascade-RCNN/OUTPUT_DIR/gongniu/gongniudet_e2e_cascade_rcnn_R-50-FPN_multiscale_2x_191129/train.log'
     rootDir = os.path.dirname(log_file)
 
     with open(log_file) as f:
@@ -26,6 +26,8 @@ if __name__ == '__main__':
         for line in f:
             if "json_stats" not in line:
                 continue
+
+            print(line)
             accuracy_cls = line.split("\"accuracy_cls\": ")[1].split(",")[0]
             # accuracy_cls = line.split("\"accuracy_cls\":")[1].split(',')[0]
             iteration = line.split("\"iter\": ")[1].split(",")[0]
