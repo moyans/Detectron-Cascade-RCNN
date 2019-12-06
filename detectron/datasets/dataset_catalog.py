@@ -410,44 +410,6 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1204TestData2019.json'
     },
 
-
-    # liby_posm 191024 del
-    # 'coco_2019_LibyPOSMP1TrainSetData' : {
-    #     #  liby_posm part1_train data
-    #     _IM_DIR:
-    #         _DATA_DIR + '/coco/coco_LibyPOSMP1TrainSetData2019',
-    #     _ANN_FN:
-    #         _DATA_DIR + '/coco/annotations/instances_LibyPOSMP1TrainSetData2019.json'
-    # },
-    # 'coco_2019_LibyPOSMP2TrainSetData' : {
-    #     #  liby_posm part1_train data
-    #     _IM_DIR:
-    #         _DATA_DIR + '/coco/coco_LibyPOSMP2TrainSetData2019',
-    #     _ANN_FN:
-    #         _DATA_DIR + '/coco/annotations/instances_LibyPOSMP2TrainSetData2019.json'
-    # },
-    # 'coco_2019_LibyPOSMCheckData' : {
-    #     #  liby_posm part1_train data
-    #     _IM_DIR:
-    #         _DATA_DIR + '/coco/coco_LibyPOSMCheckData2019',
-    #     _ANN_FN:
-    #         _DATA_DIR + '/coco/annotations/instances_LibyPOSMCheckData2019.json'
-    # },
-    # # liby_posm 191029 del
-    # 'coco_2019_LibyPOSM191019TrainData' : {
-    #     #  liby_posm part1_train data
-    #     _IM_DIR:
-    #         _DATA_DIR + '/coco/coco_LibyPOSM191019TrainData2019',
-    #     _ANN_FN:
-    #         _DATA_DIR + '/coco/annotations/instances_LibyPOSM191019TrainData2019.json'
-    # },
-    # 'coco_2019_LibyPOSM191019CheckData' : {
-    #     #  liby_posm part1_train data
-    #     _IM_DIR:
-    #         _DATA_DIR + '/coco/coco_LibyPOSM191019CheckData2019',
-    #     _ANN_FN:
-    #         _DATA_DIR + '/coco/annotations/instances_LibyPOSM191019CheckData2019.json'
-    # },
     # liby_posm 191107
     'coco_2019_LibyPOSM191107TrainData' : {
         #  liby_posm 191107 train data
@@ -571,7 +533,36 @@ _DATASETS = {
             _DATA_DIR + '/coco/coco_Gongniou191107CheckData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_Gongniou191107CheckData2019.json'
-    },  
+    },
+    # 公牛posm 目标类别POSM 10class
+    'coco_2019_GongniuPOSM191203TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GongniuPOSM191203Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GongniuPOSM191203TrainData2019.json'
+    },
+    # 公牛posm 目标类别POSM 10class
+    'coco_2019_GongniuPOSM191203TestData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GongniuPOSM191203Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GongniuPOSM191203TestData2019.json'
+    },
+    # 公牛posm 通用POSM
+    'coco_2019_GongniuGeneralPOSM191203TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GongniuPOSM191203Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GongniuGeneralPOSM191203TrainData2019.json'
+    },
+    # 公牛posm 通用POSM
+    'coco_2019_GongniuGeneralPOSM191203TestData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GongniuPOSM191203Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GongniuGeneralPOSM191203TestData2019.json'
+    },
+
 
     # 百事sku 191112
     'coco_2019_Pepsi191112TrainData' : {
