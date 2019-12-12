@@ -683,13 +683,18 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_TextReCTSCheckData2019.json'
     }, 
 
-    'coco_2019_DelData' : {
+    'coco_2019_ByHealthPOS191209TrainData' : {
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_DelData2019',
+            _DATA_DIR + '/coco/coco_ByHealthPOS191209TrainData2019',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_DelData2019.json'
+            _DATA_DIR + '/coco/annotations/instances_ByHealthPOS191209TrainData2019.json'
     }, 
-
+    'coco_2019_ByHealthPOS191209TestData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_ByHealthPOS191209TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_ByHealthPOS191209TestData2019.json'
+    }, 
 
 }
 
