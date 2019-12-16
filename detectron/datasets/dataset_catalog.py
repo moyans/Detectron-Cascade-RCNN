@@ -497,6 +497,21 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_GeneralulPOSMDet191115Train2019.json'
     }, 
+    'coco_2019_GeneralMZCPOSM191216TrainData' : {
+        # trainset general MZC 3Class 191216 withSKU PriceTag
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GeneralMZCPOSM191216TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GeneralMZCPOSM191216TrainData2019.json'
+    }, 
+    'coco_2019_GeneralMZCPOSM191216TestData' : {
+        # testset general MZC 3Class 191216 withSKU PriceTag
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GeneralMZCPOSM191216TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GeneralMZCPOSM191216TestData2019.json'
+    },
+
 
 
     # 亿滋sku 191028
