@@ -46,6 +46,8 @@ import detectron.utils.boxes as box_utils
 import detectron.utils.image as image_utils
 import detectron.utils.keypoints as keypoint_utils
 
+# import imagedt
+
 logger = logging.getLogger(__name__)
 
 
@@ -118,6 +120,7 @@ def im_conv_body_only(model, im, target_scale, target_max_size):
     return im_scale
 
 
+# @imagedt.decorator.time_cost
 def im_detect_bbox(model, im, target_scale, target_max_size, boxes=None):
     """Bounding box object detection for an image with given box proposals.
 

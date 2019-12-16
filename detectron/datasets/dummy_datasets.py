@@ -147,6 +147,23 @@ def get_libyposm191024_dataset():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
 
+def get_gongniuposm_data():
+    ds = AttrDict()
+    classes = [
+         '__background__', '19761', '19830', '19834', '19829', '19837', '19835', '19833', '19836', '19831', '19832'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
+
+def get_byhealthposm191212_data():
+    ds = AttrDict()
+    classes = [
+        #  '__background__', '19916', '19915', '19914', '19917', '19913', '19918', '19920', '19925', '19922', '19924', '19919'
+         '__background__', '19656', '19655', '19652', '19660', '19650', '19664', '19666', '19674', '19671', '19673', '19665'
+
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds   
 
 
 def test():

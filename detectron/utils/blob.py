@@ -36,6 +36,14 @@ from caffe2.proto import caffe2_pb2
 
 from detectron.core.config import cfg
 
+# import imagedt
+# def func_time(func):
+#     def inner(*args,**kw):
+#         start_time = time.time()
+#         func(*args,**kw)
+#         end_time = time.time()
+#         print('running time: ',end_time-start_time,'s')
+#     return inner
 
 def get_image_blob(im, target_scale, target_max_size):
     """Convert an image into a network input.
@@ -96,7 +104,7 @@ def im_list_to_blob(ims):
     blob = blob.transpose(channel_swap)
     return blob
 
-
+# @imagedt.decorator.time_cost
 def prep_im_for_blob(im, pixel_means, target_size, max_size):
     """Prepare an image for use as a network input blob. Specially:
       - Subtract per-channel pixel mean

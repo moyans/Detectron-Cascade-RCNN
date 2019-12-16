@@ -29,6 +29,8 @@ import pprint
 import sys
 import time
 
+# os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+
 from caffe2.python import workspace
 
 from detectron.core.config import assert_and_infer_cfg

@@ -9,7 +9,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import detectron.datasets.dummy_datasets as dummy_datasets
+#dummy_datasets_moyan.py
+
 from lxml.etree import Element, SubElement, tostring
 from xml.dom.minidom import parseString
 import argparse
@@ -23,8 +24,13 @@ import numpy as np
 import cv2  # NOQA (Must import before importing caffe2 due to bug in cv2)
 import os
 import sys
+import pexif
+import traceback
+import math
+import detectron.datasets.dummy_datasets as dummy_datasets
 
-# os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+
+#os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -64,14 +70,127 @@ def parse_args():
         default=0.5,
         type=float
     )
+
     parser.add_argument(
-        '--gpu',
-        dest='gpu',
-        help='gpu ID',
-        default=1,
-        type=float
+        '--gpu_id',
+        dest='gpu_id',
+        help='gpu_id',
+        default=0,
+        type=str
     )
     return parser.parse_args()
+
+filter_postfix=[".jpg", ".JPG", "PNG", ".png", ".jpeg"]
+
+def readTxt2Lines(txt_file_path):
+    with open(txt_file_path, 'r') as f:
+        lines = f.readlines()
+        lines = [line.strip() for line in lines]
+        return lines
+
+def rotate(src, angle, min_edge=None):
+    w = src.shape[1]
+    h = src.shape[0]
+
+    scale = 1.
+    if min_edge is not None and min(w, h) > min_edge:
+        scale = min_edge * 1.0 / min(w, h)
+
+    rangle = np.deg2rad(angle)
+    # now calculate new image width and height
+    nw = (abs(np.sin(rangle) * h) + abs(np.cos(rangle) * w)) * scale
+    nh = (abs(np.cos(rangle) * h) + abs(np.sin(rangle) * w)) * scale
+    # ask OpenCV for the rotation matrix
+    rot_mat = cv2.getRotationMatrix2D((nw * 0.5, nh * 0.5), angle, scale)
+    # calculate the move from the old center to the new center combined
+    # with the rotation
+    rot_move = np.dot(rot_mat, np.array([(nw - w) * 0.5, (nh - h) * 0.5, 0]))
+    # the move only affects the translation, so update the translation
+    # part of the transform
+    rot_mat[0, 2] += rot_move[0]
+    rot_mat[1, 2] += rot_move[1]
+
+    img = cv2.warpAffine(src, rot_mat, (int(math.ceil(nw)), int(math.ceil(nh))), flags=cv2.INTER_LANCZOS4)
+
+    return img
+
+def rotateExif(input_file, min_edge=None):
+    # if not cv2.__version__.startswith('2'):
+    #     print 'incapable cv2 version!!!'
+    #     sys.exit()
+    orientation = 1
+
+    try:
+        img = pexif.JpegFile.fromFile(input_file)
+        # Get the orientation if it exists
+        orientation = img.exif.primary.Orientation[0]
+    except:
+        traceback.print_exc()
+
+    # now rotate the image using the Python Image Library (PIL)
+    if cv2.__version__.startswith('2'):
+        img_ori = cv2.imread(input_file)
+    else:
+        img_ori = cv2.imread(input_file, cv2.IMREAD_COLOR|cv2.IMREAD_IGNORE_ORIENTATION)
+
+    img = img_ori.copy()
+    # print("orientation: {}".format(orientation))
+    if orientation is 6:
+        img = rotate(img, -90, min_edge)
+        cv2.imwrite(input_file, img)
+    elif orientation is 8:
+        img = rotate(img, 90, min_edge)
+        cv2.imwrite(input_file, img)
+    elif orientation is 3:
+        img = rotate(img, 180, min_edge)
+        cv2.imwrite(input_file, img)
+    # save the result
+    return img
+
+def pathExit(path):
+    if isinstance(path, list):
+        for ipath in path:
+            if not os.path.exists(ipath):
+                os.makedirs(ipath)
+    else:
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+
+# def walkDir2RealPathList(path, page):
+#     root_lists = []
+#     for fpathe, dirs, fs in os.walk(path):
+#         # 返回的是一个三元tupple(dirpath, dirnames, filenames),
+#         for k, f in enumerate(fs):
+#             apath = os.path.join(fpathe, f)
+#             if k == 0:
+#                 lidpath = fpathe.strip().replace(page, 'Annotations/')
+#                 pathExit(lidpath)
+#             ext = os.path.splitext(apath)[1]
+#             if ext in filter_postfix:
+#                 root_lists.append(apath)
+#     return root_lists
+
+def walkDir2RealPathList(path, filter_postfix=[".jpg", ".JPG", "PNG", ".png", ".jpeg"]):
+    root_lists = []
+    filter_postfix = filter_postfix
+    if filter_postfix:
+        print("Files will be searched by the specified suffix, {}".format(filter_postfix))
+    else:
+        print("All files will be searched")
+
+    for fpathe, dirs, fs in os.walk(path):
+        # 返回的是一个三元tupple(dirpath, dirnames, filenames),
+        for f in fs:
+            # print(os.path.join(fpathe, f))
+            apath = os.path.join(fpathe, f)
+            ext = os.path.splitext(apath)[1]
+            if filter_postfix:
+                if ext in filter_postfix:
+                    root_lists.append(apath)
+            else:
+                root_lists.append(apath)
+    return root_lists
 
 
 def get_class_string(class_index, dataset):
@@ -143,10 +262,10 @@ def convert_from_cls_format(cls_boxes, cls_segms, cls_keyps):
 
 
 class mycaffe2(object):
-    def __init__(self, cfg_file, weights, gpu_id=1, thresh_=0.5):
+    def __init__(self, cfg_file, weights, gpu_id=0, thresh_=0.5):
         self.gpu_id = gpu_id
         self.thresh = thresh_
-        self.classs = dummy_datasets.get_byhealthposm191212_data()  # get_surveyPOSM_dataset get_idtSKU_dataset get_ulposm_dataset
+        self.classs = dummy_datasets.get_idtSKU_dataset()
         workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
         merge_cfg_from_file(cfg_file)
         cfg.NUM_GPUS = 1
@@ -154,12 +273,10 @@ class mycaffe2(object):
         self.model = infer_engine.initialize_model_from_cfg(weights, gpu_id)
 
     def detect(self, img):
-        
-        im = cv2.imread(img)
-
-        # filter img is 0kb
-        if im is None:
+        if cv2.imread(img) is None:
             return None
+        else:
+            im = rotateExif(img)
 
         with c2_utils.NamedCudaScope(self.gpu_id):
             cls_boxes, cls_segms, cls_keyps = infer_engine.im_detect_all(
@@ -198,43 +315,45 @@ class mycaffe2(object):
 
 if __name__ == '__main__':
 
-    cwd = os.getcwd()
+    tag = '/gz-data/商品指纹数据/'
+    pretag = '/project/商品指纹数据/'
+
     args = parse_args()
+    GPU_ID = int(args.gpu_id)
+
+    print("config file :{}".format(args.cfg_file))
+    print("weights file :{}".format(args.model))
+    print("det img path :{}".format(args.test_dir))
+
+    assert os.path.exists(args.cfg_file) 
+    assert os.path.exists(args.model) 
+    assert os.path.exists(args.test_dir)
+
+    model = mycaffe2(args.cfg_file, args.model, thresh_=args.thresh, gpu_id=GPU_ID)
     
-    cfg_file = args.cfg_file
-    weights = args.model
-    assert os.path.exists(cfg_file)
-    assert os.path.exists(weights)
-    gpu_ID = int(args.gpu)
+    # detList = walkDir2RealPathList(args.test_dir)
+    detList = readTxt2Lines(args.test_dir)
+    alllen = len(detList)
+    print("{} imgs".format(alllen))
+    for idx, imgPath in enumerate(detList):
+        try:
+            assert os.path.exists(imgPath)
+        except:
+            print("{}, this img is not exist".format(imgPath))
+            pass
+        print('all length: {}, loading {},  name: {}'.format(alllen, idx, imgPath))
+        postfix = os.path.splitext(imgPath)[1]
+        name = imgPath.strip().split('/')[-1].replace(postfix, '')
+        xmlPath = imgPath.strip().replace(tag, pretag).replace(postfix, '.xml')
+        xmlDir = os.path.dirname(xmlPath)
+        print(xmlDir)
+        pathExit(xmlDir)
+        print('output xml path {}'.format(xmlPath))
 
-    det_API = mycaffe2(cfg_file, weights, thresh_=args.thresh, gpu_id=gpu_ID)
-    detDir = args.test_dir
-    assert os.path.exists(detDir)
-    detList = os.listdir(detDir)
-
-    # output_dir = os.path.join(cwd, 'Annotations')
-    output_dir = os.path.join(os.path.dirname(detDir), 'Annotations')
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    for idx, nname in enumerate(detList):
-        print('loading {}, name: {}'.format(idx, nname))
-        imgPath = os.path.join(detDir, nname)
-        predict_dict = det_API.detect(imgPath)
-
-        # '''按类别过滤，选取需要的类别'''
-        # if predict_dict:
-        #     class_all = [predict_dict[idx]['name'] for idx in range(1, len(predict_dict))]
-        #     if '17779' not in class_all:
-        #         continue
-        # else:
-        #     continue
-
+        predict_dict = model.detect(imgPath)
         if predict_dict:
-            outxml_path = os.path.join(output_dir, nname.strip().replace(
-                '.jpg', '.xml').replace('.JPG', '.xml'))
             try:
-                rewrite_xml_clean(predict_dict, nname, outxml_path)
+                rewrite_xml_clean(predict_dict, name, xmlPath)
             except:
                 pass
 
