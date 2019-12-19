@@ -409,6 +409,14 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1204TestData2019.json'
     },
+    'coco_2019_AbbottPOSMP1216TrainData' : {
+        #  Abbott_posm train 191216 data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_AbbottPOSMP1216TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1216TrainData2019.json'
+    },
+
 
     # liby_posm 191107
     'coco_2019_LibyPOSM191107TrainData' : {
