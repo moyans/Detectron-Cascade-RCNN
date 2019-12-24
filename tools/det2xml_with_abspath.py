@@ -83,7 +83,7 @@ def parse_args():
     return parser.parse_args()
 
 
-filter_postfix = [".jpg", ".JPG", "PNG", ".png"]
+# filter_postfix = 
 
 
 def rotate(src, angle, min_edge=None):
@@ -156,17 +156,24 @@ def pathExit(path):
             os.makedirs(path)
 
 
-def walkDir2RealPathList(path, page):
+def walkDir2RealPathList(path, filter_postfix=[".jpg", ".JPG", "PNG", ".png"]):
     root_lists = []
+    filter_postfix = filter_postfix
+    if filter_postfix:
+        print("Files will be searched by the specified suffix, {}".format(filter_postfix))
+    else:
+        print("All files will be searched")
+
     for fpathe, dirs, fs in os.walk(path):
         # 返回的是一个三元tupple(dirpath, dirnames, filenames),
-        for k, f in enumerate(fs):
+        for f in fs:
+            # print(os.path.join(fpathe, f))
             apath = os.path.join(fpathe, f)
-            if k == 0:
-                lidpath = fpathe.strip().replace(page, 'Annotations/')
-                pathExit(lidpath)
             ext = os.path.splitext(apath)[1]
-            if ext in filter_postfix:
+            if filter_postfix:
+                if ext in filter_postfix:
+                    root_lists.append(apath)
+            else:
                 root_lists.append(apath)
     return root_lists
 
@@ -294,34 +301,42 @@ class mycaffe2(object):
 
 if __name__ == '__main__':
 
-    cwd = os.getcwd()
-    args = parse_args()
-    GPU_ID = int(args.gpu_id)
-    _cfg_file = os.path.join('workdir', args.cfg_file)
-    _model = os.path.join('workdir', args.model)
-    _test_dir = os.path.join('workdir', args.test_dir)
+    # cwd = os.getcwd()
+    # args = parse_args()
+    # GPU_ID = int(args.gpu_id)
+    # _cfg_file = os.path.join('workdir', args.cfg_file)
+    # _model = os.path.join('workdir', args.model)
+    # _test_dir = os.path.join('workdir', args.test_dir)
 
-    print("config file :{}".format(args.cfg_file))
-    print("weights file :{}".format(args.model))
-    print("det img path :{}".format(args.test_dir))
+    # print("config file :{}".format(args.cfg_file))
+    # print("weights file :{}".format(args.model))
+    # print("det img path :{}".format(args.test_dir))
 
-    cfg_file = os.path.join(cwd, _cfg_file)
-    weights = os.path.join(cwd, _model)
+    # cfg_file = os.path.join(cwd, _cfg_file)
+    # weights = os.path.join(cwd, _model)
+
+    GPU_ID = 0
+    thresh = 0.5
+    cfg_file = 'Model_Online/general/old/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424/config.yaml'
+    weights = 'Model_Online/general/old/skuDet_cascade_X101-64x4d_FPN_2x_ms_190424/model_final.pkl'
+    detDir = '/data/Data/del/2019_12_16'
+    outputDir = os.getcwd()
 
     assert os.path.exists(cfg_file)
     assert os.path.exists(weights)
 
-    de = mycaffe2(cfg_file, weights, thresh_=args.thresh, gpu_id=GPU_ID)
-    detDir = os.path.join(cwd, _test_dir)
+    de = mycaffe2(cfg_file, weights, thresh_=thresh, gpu_id=GPU_ID)
+    # detDir = os.path.join(cwd, _test_dir)
 
-    detList = walkDir2RealPathList(detDir, args.test_dir)
+    detList = walkDir2RealPathList(detDir)
     print("{} imgs".format(len(detList)))
     for idx, imgPath in enumerate(detList):
         print('loading {},  name: {}'.format(idx, imgPath))
         postfix = os.path.splitext(imgPath)[1]
         name = imgPath.strip().split('/')[-1].replace(postfix, '')
-        xmlPath = imgPath.strip().replace(
-            args.test_dir, '/Annotations/').replace(postfix, '.xml')
+
+        xmlPath = imgPath.strip().replace(postfix, '.xml')
+
         predict_dict = de.detect(imgPath)
         if predict_dict:
             try:

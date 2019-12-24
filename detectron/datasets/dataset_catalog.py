@@ -416,6 +416,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1216TrainData2019.json'
     },
+    'coco_2019_AbbottPOSMP1209TestData' : {
+        #  Abbott_posm test 191209 data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_AbbottPOSMP1209TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_AbbottPOSMP1209TestData2019.json'
+    },
 
 
     # liby_posm 191107
@@ -717,6 +724,20 @@ _DATASETS = {
             _DATA_DIR + '/coco/coco_ByHealthPOS191209TestData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_ByHealthPOS191209TestData2019.json'
+    }, 
+
+    # 格力高posm glico
+    'coco_2019_GlicoPOS191212TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GlicoPOS191212TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GlicoPOS191212TrainData2019.json'
+    }, 
+    'coco_2019_GlicoPOS191212TestData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GlicoPOS191212TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GlicoPOS191212TestData2019.json'
     }, 
 
 }
