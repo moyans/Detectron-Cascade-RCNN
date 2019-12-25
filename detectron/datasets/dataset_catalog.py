@@ -740,6 +740,19 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_GlicoPOS191212TestData2019.json'
     }, 
 
+    # 美赞臣posm data191213
+    'coco_2019_MZCPOS191213TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_MZCPOS191213TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_MZCPOS191213TrainData2019.json'
+    }, 
+    'coco_2019_MZCPOS191213TestData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_MZCPOS191213TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_MZCPOS191213TestData2019.json'
+    }, 
 }
 
 
