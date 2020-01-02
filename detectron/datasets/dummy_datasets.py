@@ -165,6 +165,21 @@ def get_byhealthposm191212_data():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds   
 
+def get_glicoposm191212_data():
+    ds = AttrDict()
+    classes = [
+         '__background__', '19908', '19909', '19761_other', '19908_other', '19910', '19911', '19912'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds 
+
+def get_mzcposm191213_data():
+    ds = AttrDict()
+    classes = [
+         '__background__','19309', '19311', '19310', '19312', '19308', '19303', '19316', '19327', '19313', '19317', '19326', '19318', '19304', '19315', '19314', '19333', '19332', '19320', '19305', '19329', '19306', '19331'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds  
 
 def test():
     print(get_surveyPOSM_dataset())

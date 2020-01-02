@@ -753,6 +753,46 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_MZCPOS191213TestData2019.json'
     }, 
+
+    # 汤臣倍健 190312 sku dataset
+    'coco_2014_TCBJ0312TestData': {
+        # Tcbj 0312 test
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TCBJ0312CheckData2014',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TCBJ0312CheckData2014.json'
+    },
+
+    # 黑人sku检测 dataset
+    'coco_2019_HeirRen190919TrainData': {
+        # HeirRen 190919 Train
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_HeirRen190919TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_HeirRen190919TrainData2019.json'
+    },
+    'coco_2019_HeirRen190919TestData': {
+        # HeirRen 190919 test
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_HeirRen190919TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_HeirRen190919TestData2019.json'
+    },
+    'coco_2019_HeirRen191225TrainData': {
+        # HeirRen 191225 Train
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_HeirRen191225TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_HeirRen191225TrainData2019.json'
+    },
+    'coco_2019_HeirRen191225TestData': {
+        # HeirRen 191225 test
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_HeirRen191225TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_HeirRen191225TestData2019.json'
+    },
+
 }
 
 
