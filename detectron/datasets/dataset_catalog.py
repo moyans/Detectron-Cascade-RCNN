@@ -725,6 +725,12 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_ByHealthPOS191209TestData2019.json'
     }, 
+    'coco_2019_ByHealthPOS191230TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_ByHealthPOS191230TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_ByHealthPOS191230TrainData2019.json'
+    },
 
     # 格力高posm glico
     'coco_2019_GlicoPOS191212TrainData' : {
