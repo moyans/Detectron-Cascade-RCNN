@@ -277,6 +277,20 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_SKUTestDetData2019.json'
     },
+    'coco_2019_SkuDetV1TrainData' : {
+        #  general sku test data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SkuDetV1Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SkuDetV1TrainData2019.json'
+    },
+    'coco_2019_SkuDetV1TestData' : {
+        #  general sku test data
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SkuDetV1Data2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SkuDetV1TestData2019.json'
+    },
 
 
 
@@ -760,14 +774,7 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_MZCPOS191213TestData2019.json'
     }, 
 
-    # 汤臣倍健 190312 sku dataset
-    'coco_2014_TCBJ0312TestData': {
-        # Tcbj 0312 test
-        _IM_DIR:
-            _DATA_DIR + '/coco/coco_TCBJ0312CheckData2014',
-        _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_TCBJ0312CheckData2014.json'
-    },
+
 
     # 黑人sku检测 dataset
     'coco_2019_HeirRen190919TrainData': {
@@ -797,6 +804,31 @@ _DATASETS = {
             _DATA_DIR + '/coco/coco_HeirRen191225TestData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_HeirRen191225TestData2019.json'
+    },
+
+    # 汤臣倍健 190312 sku dataset
+    'coco_2019_TCBJ190312TrainData': {
+        # Tcbj 190312 train
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TCBJ190312TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TCBJ190312TrainData2019.json'
+    },
+    # 汤臣倍健 190312 sku dataset
+    'coco_2019_TCBJ190312TestData': {
+        # Tcbj 190312 test
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TCBJ190312TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TCBJ190312TestData2019.json'
+    },
+    # 汤臣倍健 skudata 200105 
+    'coco_2019_TCBJ200105TrainData': {
+        # HeirRen 191225 test
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TCBJ200105TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TCBJ200105TrainData2019.json'
     },
 
 }
