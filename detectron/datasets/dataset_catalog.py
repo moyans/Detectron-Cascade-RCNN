@@ -831,6 +831,21 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_TCBJ200105TrainData2019.json'
     },
 
+    # 格力高 skudata 200103 
+    'coco_2019_GlicoSku200103TrainData': {
+        # Glico 200103 trainset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GlicoSku200103TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GlicoSku200103TrainData2019.json'
+    },
+    'coco_2019_GlicoSku200103TestData': {
+        # Glico 200103 testset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GlicoSku200103TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GlicoSku200103TestData2019.json'
+    },
 }
 
 
