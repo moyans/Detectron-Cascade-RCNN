@@ -849,18 +849,53 @@ _DATASETS = {
 
     # 玛氏年会sku检测
     'coco_2019_MarsSku200119TrainData': {
-        # Glico 200103 trainset
         _IM_DIR:
             _DATA_DIR + '/coco/coco_MarsSku200119TrainData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_MarsSku200119TrainData2019.json'
     },
     'coco_2019_MarsSku200119TestData': {
-        # Glico 200103 testset
         _IM_DIR:
             _DATA_DIR + '/coco/coco_MarsSku200119TestData2019',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_MarsSku200119TestData2019.json'
+    },
+
+    # 2019之前价格牌检测数据整理
+    'coco_2019_PricetagDetTrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_PricetagDetTrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_PricetagDetTrainData2019.json'
+    },
+    # ------------------------------------------------------------------ #
+    'coco_2014_PriceDet10wmzc0402Data': {
+        # PriceDet 10w价格牌mzc_price0402(部分),大图5383
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_PriceDet10wmzc0402Data2014',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_PriceDet10wmzc0402Data2014.json'
+    },
+    # ------------------------------------------------------------------ #
+    'coco_2019_PricetagDetTestData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_PricetagDetTestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_PricetagDetTestData2019.json'
+    },
+
+    # 拜耳价格牌200101
+    'coco_2020_BayerPricetagDet200101TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_BayerPricetagDet200101TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_BayerPricetagDet200101TrainData2020.json'
+    },
+    'coco_2020_BayerPricetagDet200101TestData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_BayerPricetagDet200101TestData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_BayerPricetagDet200101TestData2020.json'
     },
 
 }
