@@ -846,6 +846,23 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_GlicoSku200103TestData2019.json'
     },
+
+    # 玛氏年会sku检测
+    'coco_2019_MarsSku200119TrainData': {
+        # Glico 200103 trainset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_MarsSku200119TrainData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_MarsSku200119TrainData2019.json'
+    },
+    'coco_2019_MarsSku200119TestData': {
+        # Glico 200103 testset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_MarsSku200119TestData2019',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_MarsSku200119TestData2019.json'
+    },
+
 }
 
 
