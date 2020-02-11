@@ -898,6 +898,19 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_BayerPricetagDet200101TestData2020.json'
     },
 
+    # 欧莱雅skudata200110
+    'coco_2020_Lorealparis200110TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Lorealparis200110TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Lorealparis200110TrainData2020.json'
+    },
+    'coco_2020_Lorealparis200110TestData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Lorealparis200110TestData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Lorealparis200110TestData2020.json'
+    },
 }
 
 
