@@ -911,6 +911,21 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_Lorealparis200110TestData2020.json'
     },
+
+    # 嘉士伯psomdata200205
+    'coco_2020_CarlsbergPosm200205TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_CarlsbergPosm200205TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_CarlsbergPosm200205TrainData2020.json'
+    },
+    'coco_2020_CarlsbergPosm200205TestData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_CarlsbergPosm200205TestData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_CarlsbergPosm200205TestData2020.json'
+    },
+
 }
 
 
