@@ -926,6 +926,35 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_CarlsbergPosm200205TestData2020.json'
     },
 
+    # 玛氏宠物data200115
+    'coco_2020_Mars200115TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Mars200115TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Mars200115TrainData2020.json'
+    },
+    'coco_2020_Mars200115TestData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Mars200115TestData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Mars200115TestData2020.json'
+    },
+    # 玛氏宠物data200218
+    'coco_2020_Mars200218TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Mars200218TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Mars200218TrainData2020.json'
+    },
+    'coco_2020_Mars200218TestData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_Mars200218TestData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_Mars200218TestData2020.json'
+    },
+
+
+
 }
 
 
