@@ -182,6 +182,14 @@ def get_mzcposm191213_data():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds  
 
+def get_carlsbergposm200205_data():
+    ds = AttrDict()
+    classes = [
+         '__background__','20378', '20379', '20326'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds  
+
 def test():
     print(get_surveyPOSM_dataset())
 
