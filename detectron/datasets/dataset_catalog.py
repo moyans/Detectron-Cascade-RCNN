@@ -959,7 +959,19 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_Mars200218TestData2020.json'
     },
 
-
+    # 统一场景
+    'coco_2020_TongY200224TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongY200224TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongY200224TrainData2020.json'
+    },
+    'coco_2020_TongY200224TestData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongY200224TestData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongY200224TestData2020.json'
+    },
 
 }
 
