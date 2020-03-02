@@ -759,6 +759,14 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_GlicoPOS191212TestData2019.json'
     }, 
+    'coco_2020_GlicoPOS200226TrainData' : {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GlicoPOS200226TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GlicoPOS200226TrainData2020.json'
+    }, 
+
+
 
     # 美赞臣posm data191213
     'coco_2019_MZCPOS191213TrainData' : {
