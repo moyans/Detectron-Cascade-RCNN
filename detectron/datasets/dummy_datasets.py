@@ -190,6 +190,14 @@ def get_carlsbergposm200205_data():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds  
 
+def get_tongy200224_data():
+    ds = AttrDict()
+    classes = [
+         '__background__', '19696', '19697', '19700', '19695', '19694', '19699', '21254', '21253'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds  
+
 def test():
     print(get_surveyPOSM_dataset())
 
