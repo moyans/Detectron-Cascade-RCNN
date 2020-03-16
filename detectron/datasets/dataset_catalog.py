@@ -968,23 +968,38 @@ _DATASETS = {
     },
 
     # 统一场景
-    'coco_2020_TongY200224TrainData': {
+    # 'coco_2020_TongY200224TrainData': {
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_TongY200224TrainData2020',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_TongY200224TrainData2020.json'
+    # },
+    # 'coco_2020_TongY200224TestData': {
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_TongY200224TestData2020',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_TongY200224TestData2020.json'
+    # },
+    # 'coco_2020_TongY200228TrainData': {
+    #     _IM_DIR:
+    #         _DATA_DIR + '/coco/coco_TongY200228TrainData2020',
+    #     _ANN_FN:
+    #         _DATA_DIR + '/coco/annotations/instances_TongY200228TrainData2020.json'
+    # },
+    'coco_2020_TongY200306Data': {
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_TongY200224TrainData2020',
+            _DATA_DIR + '/coco/coco_TongY200306Data2020',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_TongY200224TrainData2020.json'
+            _DATA_DIR + '/coco/annotations/instances_TongY200306Data2020.json'
     },
-    'coco_2020_TongY200224TestData': {
+
+
+    # underwater
+    'coco_2020_UwTrainData': {
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_TongY200224TestData2020',
+            _DATA_DIR + '/coco/coco_UwTrainData2020',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_TongY200224TestData2020.json'
-    },
-    'coco_2020_TongY200228TrainData': {
-        _IM_DIR:
-            _DATA_DIR + '/coco/coco_TongY200228TrainData2020',
-        _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_TongY200228TrainData2020.json'
+            _DATA_DIR + '/coco/annotations/instances_UwTrainData2020.json'
     },
 
 }
