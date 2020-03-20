@@ -998,7 +998,12 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_TongY200309Data2020.json'
     },
-
+    'coco_2020_TongY200318Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongY200318Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongY200318Data2020.json'
+    },
 
     # underwater
     'coco_2020_UwTrainData': {
