@@ -1004,6 +1004,20 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_TongY200318Data2020.json'
     },
+    # 统一sku
+    'coco_2020_TongYSKUTrain200309Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongYSKUTrain200309Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongYSKUTrain200309Data2020.json'
+    },
+    'coco_2020_TongYSKUCheck200309Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongYSKUCheck200309Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongYSKUCheck200309Data2020.json'
+    },
+
 
     # underwater
     'coco_2020_UwTrainData': {
