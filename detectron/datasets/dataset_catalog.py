@@ -1023,6 +1023,21 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_TongYSKUCheck200309Data2020.json'
     },
 
+    # 多芬-posm data200323
+    'coco_2020_DuofPOSMTrain200323Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_DuofPOSMTrain200323Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_DuofPOSMTrain200323Data2020.json'
+    },
+    'coco_2020_DuofPOSMCheck200323Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_DuofPOSMCheck200323Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_DuofPOSMCheck200323Data2020.json'
+    },
+
+
 
     # underwater
     'coco_2020_UwTrainData': {
