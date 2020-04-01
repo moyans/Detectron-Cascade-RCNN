@@ -1037,15 +1037,27 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_DuofPOSMCheck200323Data2020.json'
     },
 
-
-
-    # underwater
-    'coco_2020_UwTrainData': {
+    # 同仁堂sku
+    'coco_2020_TongrentangSKUTrain200325Data': {
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_UwTrainData2020',
+            _DATA_DIR + '/coco/coco_TongrentangSKUTrain200325Data2020',
         _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_UwTrainData2020.json'
+            _DATA_DIR + '/coco/annotations/instances_TongrentangSKUTrain200325Data2020.json'
     },
+    'coco_2020_TongrentangSKUCheck200325Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongrentangSKUCheck200325Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongrentangSKUCheck200325Data2020.json'
+    },
+    # 拜耳sku 
+    'coco_2020_BayerSKUData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_BayerSKUData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_BayerSKUData2020.json'
+    },
+
 
 }
 
