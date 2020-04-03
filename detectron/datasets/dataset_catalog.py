@@ -859,6 +859,15 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_GlicoSku200103TestData2019.json'
     },
+    'coco_2020_GlicoSku200323TrainData': {
+        # Glico 200323
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_GlicoSku200323TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_GlicoSku200323TrainData2020.json'
+    },
+
+
 
     # 玛氏年会sku检测
     'coco_2019_MarsSku200119TrainData': {
