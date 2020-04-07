@@ -1018,6 +1018,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_TongY200318Data2020.json'
     },
+    'coco_2020_TongY200330Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongY200330Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongY200330Data2020.json'
+    },
+
     # 统一sku
     'coco_2020_TongYSKUTrain200309Data': {
         _IM_DIR:
