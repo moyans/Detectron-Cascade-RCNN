@@ -1074,7 +1074,19 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_BayerSKUData2020.json'
     },
 
-
+    # 切图data200408
+    'coco_2020_SplitSKUTrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SplitSKUTrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SplitSKUTrainData2020.json'
+    },
+    'coco_2020_SplitSKUCheckData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_SplitSKUCheckData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_SplitSKUCheckData2020.json'
+    },
 }
 
 
