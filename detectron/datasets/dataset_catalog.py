@@ -1087,6 +1087,21 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_SplitSKUCheckData2020.json'
     },
+
+    # 联合利华200409(ul_多芬)
+    'coco_2020_UnileverGeneralPOSM200409TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_UnileverGeneralPOSM200409TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_UnileverGeneralPOSM200409TrainData2020.json'
+    },
+    'coco_2020_UnileverGeneralPOSM200409CheckData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_UnileverGeneralPOSM200409CheckData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_UnileverGeneralPOSM200409CheckData2020.json'
+    },
+
 }
 
 
