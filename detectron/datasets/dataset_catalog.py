@@ -1038,6 +1038,13 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/instances_TongYSKUCheck200309Data2020.json'
     },
+    'coco_2020_TongYSKUTrain200324Data': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_TongYSKUTrain200324Data2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_TongYSKUTrain200324Data2020.json'
+    },    
+
 
     # 多芬-posm data200323
     'coco_2020_DuofPOSMTrain200323Data': {
