@@ -219,6 +219,22 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_HeapSeg0911CheckData2019.json'
     },
 
+    'coco_2018_LOGOGeneralTrainData' : {
+        #  logo trainset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_LOGOGeneralTrainData2018',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_LOGOGeneralTrainData2018.json'
+    },
+    'coco_2018_LOGOGeneralCheckData' : {
+        #  Log weibo testset
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_LOGOGeneralCheckData2018',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_LOGOGeneralCheckData2018.json'
+    },
+
+
     'coco_2019_SKU110kData' : {
         #  SKU110k trainset
         _IM_DIR:
