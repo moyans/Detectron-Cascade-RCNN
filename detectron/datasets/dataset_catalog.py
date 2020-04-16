@@ -1125,6 +1125,21 @@ _DATASETS = {
             _DATA_DIR + '/coco/annotations/instances_UnileverGeneralPOSM200409CheckData2020.json'
     },
 
+
+    # 达能posmdata200325
+    'coco_2020_DNPOSMdata200325TrainData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_DNPOSMdata200325TrainData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_DNPOSMdata200325TrainData2020.json'
+    },
+    'coco_2020_DNPOSMdata200325CheckData': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_DNPOSMdata200325CheckData2020',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_DNPOSMdata200325CheckData2020.json'
+    },
+
 }
 
 
