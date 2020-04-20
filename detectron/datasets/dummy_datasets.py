@@ -1,3 +1,4 @@
+# coding:utf-8
 # Copyright (c) 2017-present, Facebook, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -170,6 +171,7 @@ def get_glicoposm191212_data():
     ds = AttrDict()
     classes = [
          '__background__', '19908', '19909', '19761_other', '19908_other', '19910', '19911', '19912'
+        #  '__background__', '19908', '19909', '0', '0', '19910', '19911', '19912'    # online
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds 
@@ -190,10 +192,37 @@ def get_carlsbergposm200205_data():
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds  
 
-def get_tongy200224_data():
+# def get_tongy200224_data():
+#     ds = AttrDict()
+#     classes = [
+#          '__background__', '19696', '19697', '19700', '19695', '19694', '19699', '21254', '21253'
+#     ]
+#     ds.classes = {i: name for i, name in enumerate(classes)}
+#     return ds  
+
+def get_tongy200306_data():
     ds = AttrDict()
     classes = [
-         '__background__', '19696', '19697', '19700', '19695', '19694', '19699', '21254', '21253'
+        '__background__', '19696', '19695', '19697', '19700', '19694', '19698', '21253', '19699', '21254'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds  
+
+# 多芬-posm data200323
+def get_duofposm200323_data():
+    ds = AttrDict()
+    classes = [
+        '__background__', '19761', '17353', '22781', '22783', '22782', '22780', '22784', '22787', '22788'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds  
+
+# 达能data200325
+def get_danoneposm200325_data():
+    ds = AttrDict()
+    classes = [
+        # '__background__', '19761', '22773', '22776', '22770', '22771', '22774', '22766'
+        '__background__', '0', '22773', '22776', '22770', '22771', '22774', '22766'
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds  

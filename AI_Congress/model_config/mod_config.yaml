@@ -1,0 +1,67 @@
+
+# det_sku ssd_vgg16
+detsku_vgg16:
+    root_dir: './SKU_MODEL/detection_model/'
+    prototxt: 'deploy.prototxt'
+    caffemodel: 'HUOJIA_512.caffemodel'
+    labelmap: 'labelmap_sku.prototxt'
+    confThresh: 0.5
+    GPUID: 0
+
+detsku_rpn50:
+    root_dir: './SKU_MODEL/detection_model/'
+    prototxt: 'conf.yaml'
+    caffemodel: 'model_final.pkl'
+    confThresh: 0.7
+    GPUID: 0
+
+detsku_rpn101:
+    root_dir: './SKU_MODEL/det_rpn101/'
+    prototxt: 'conf.yaml'
+    caffemodel: 'model_final.pkl'
+    confThresh: 0.7
+    GPUID: 0
+
+detsku_retina:
+    root_dir: './SKU_MODEL/retina/'
+    prototxt: 'conf.yaml'
+    caffemodel: 'model_final.pkl'
+    confThresh: 0.8
+    GPUID: 0
+
+
+danon_resnet50:
+    root_dir: './SKU_MODEL/ResNet50/'
+    prototxt: 'deploy.prototxt'
+    caffemodel: 'resnet50_snapshot_iter_3500.caffemodel'
+    classes: 'labels_t.txt'
+    confThresh: 0.5
+    GPUID: 0
+
+danon_resnet50_11cls:
+    root_dir: './SKU_MODEL/danon_11cls/'
+    prototxt: 'deploy.prototxt'
+    caffemodel: 'snapshot_iter_1656.caffemodel'
+    classes: 'labels_t.txt'
+    confThresh: 0.5
+    GPUID: 0
+
+resnet_50_808:
+    root_dir: './SKU_MODEL/resnet_50_808/'
+    prototxt: 'deploy.prototxt'
+    caffemodel: 'snapshot_iter_116544.caffemodel'
+    classes: 'labels_t.txt'
+    confThresh: 0.5
+    GPUID: 0
+
+# MobilenetV1/Predictions/Reshape_1
+# resnet_v1_50/predictions/Reshape_1
+#root_dir: './SKU_MODEL/mobilnetv1_808/'
+mobilenetv1_808:
+    root_dir: './SKU_MODEL/mobilenetv1_808/'
+    tfmodel: 'frozen_inference_graph_skip.pb'
+    classes: 'labels_t.txt'
+    input_node_name: 'input'
+    output_node_name: 'MobilenetV1/Predictions/Reshape_1'
+    confThresh: 0.5
+    GPUID: 0

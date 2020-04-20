@@ -146,7 +146,19 @@ class mycaffe2(object):
     def __init__(self, cfg_file, weights, gpu_id=1, thresh_=0.5):
         self.gpu_id = gpu_id
         self.thresh = thresh_
-        self.classs = dummy_datasets.get_byhealthposm191212_data()  # get_surveyPOSM_dataset get_idtSKU_dataset get_ulposm_dataset
+        """
+        get_idtSKU_dataset
+        get_idtPrice_dataset
+        get_abbottposm191118_dataset
+        get_mzcposm191213_data
+        get_glicoposm191212_data
+        get_byhealthposm191212_data
+        get_carlsbergposm200205_data
+        get_tongy200306_data
+        get_duofposm200323_data
+        get_danoneposm200325_data
+        """
+        self.classs = dummy_datasets.get_danoneposm200325_data()  # get_surveyPOSM_dataset get_idtSKU_dataset get_ulposm_dataset
         workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
         merge_cfg_from_file(cfg_file)
         cfg.NUM_GPUS = 1
@@ -157,7 +169,10 @@ class mycaffe2(object):
         
         im = cv2.imread(img)
 
+        # print(im.shape)
+        # print(im[1][1][:])
         # filter img is 0kb
+
         if im is None:
             return None
 
@@ -193,6 +208,7 @@ class mycaffe2(object):
             obj_struct['score'] = score
             box_dict.append(obj_struct)
 
+        # print(box_dict)
         return box_dict
 
 

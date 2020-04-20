@@ -13,7 +13,7 @@ import os
 import cv2
 import sys
 import __init__
-# os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -137,7 +137,7 @@ if __name__ == '__main__':
 
     # det with images
 
-    testDir = '/home/train/Desktop/demo/price/'
+    testDir = '/home/train/Desktop/demo2/mzc/'
     test_imgDir = os.path.join(testDir, 'JPEGImages')
     outputDir = os.path.join(testDir, 'Annotations')
     pathExit(outputDir)
